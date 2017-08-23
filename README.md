@@ -1,5 +1,15 @@
-### Run
+## Produce batch messages to Kafka
 
-Produce 3000 messages to kafka using kafka-rest
+### Run Kafka, Zookeeper and Schema
 
->./main.go 3000 http://localhost:8082/topics/pilosa
+> bin/confluent start schema-registry
+
+### Stand up kafka-rest
+
+> bin/kafka-rest-start
+
+### Run command
+
+Produce 10000 messages to pilosa topic using kafka-rest
+
+> go run main.go 10000 http://localhost:8082/topics/pilosa
